@@ -29,21 +29,21 @@ This project demonstrates clean API design, Eloquent relationships, database mig
 
 ## 🔌 API Endpoints
 
-GET    /api/products
-POST   /api/products
-GET    /api/products/{id}
-PUT    /api/products/{id}
-DELETE /api/products/{id}
-GET    /api/products/{id}/prices
-POST   /api/products/{id}/prices
+- GET    /api/products
+- POST   /api/products
+- GET    /api/products/{id}
+- PUT    /api/products/{id}
+- DELETE /api/products/{id}
+- GET    /api/products/{id}/prices
+- POST   /api/products/{id}/prices
 
 ---
 
 ## ⚙️ Installation
 
-composer install
-cp .env.example .env
-php artisan key:generate
+- composer install
+- cp .env.example .env
+- php artisan key:generate
 
 ---
 

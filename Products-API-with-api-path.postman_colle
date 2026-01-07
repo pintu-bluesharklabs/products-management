@@ -1,0 +1,99 @@
+{
+  "info": {
+    "name": "Products Management API",
+    "description": "Laravel 12 REST API for managing products and multi-currency prices.\n\nAll endpoints are prefixed with /api.\n\nExample:\nGET /api/products",
+    "_postman_id": "e41c9b21-9999-4444-8888-abcdef987654",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "description": "Product CRUD APIs",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "description": "Retrieve all products.",
+            "url": "{{base_url}}/api/products"
+          }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "description": "Create a new product.",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"MacBook Pro\",\n  \"description\": \"Apple laptop\",\n  \"price\": 2500,\n  \"currency_id\": 1,\n  \"tax_cost\": 250,\n  \"manufacturing_cost\": 1800\n}"
+            },
+            "url": "{{base_url}}/api/products"
+          }
+        },
+        {
+          "name": "Get Product By ID",
+          "request": {
+            "method": "GET",
+            "description": "Get product details by ID.",
+            "url": "{{base_url}}/api/products/1"
+          }
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "description": "Update product details.",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 2600,\n  \"tax_cost\": 260\n}"
+            },
+            "url": "{{base_url}}/api/products/1"
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "description": "Delete a product by ID.",
+            "url": "{{base_url}}/api/products/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Product Prices",
+      "description": "Multi-currency pricing APIs",
+      "item": [
+        {
+          "name": "Get Product Prices",
+          "request": {
+            "method": "GET",
+            "description": "Get all prices for a product in different currencies.",
+            "url": "{{base_url}}/api/products/1/prices"
+          }
+        },
+        {
+          "name": "Create Product Price",
+          "request": {
+            "method": "POST",
+            "description": "Add a price for a product in a specific currency.",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currency_id\": 2,\n  \"price\": 2100\n}"
+            },
+            "url": "{{base_url}}/api/products/1/prices"
+          }
+        }
+      ]
+    }
+  ]
+}
